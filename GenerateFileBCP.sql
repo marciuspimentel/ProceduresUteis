@@ -48,7 +48,7 @@ Exec('Select OBJECT_ID('''+@TableName+''')')
 
 Select @TableObjectId = Id From @TableObject;
 
-Set @CommandSysColumn = 'Insert ##TableColumns Select Name From Epbx2.Sys.columns Where Object_Id = Cast('''+Cast(@TableObjectId As Varchar)+''' As Bigint)';
+Set @CommandSysColumn = 'Insert ##TableColumns Select Name From Sys.columns Where Object_Id = Cast('''+Cast(@TableObjectId As Varchar)+''' As Bigint)';
 
 Exec(@CommandSysColumn)
 
